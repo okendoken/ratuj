@@ -1,12 +1,22 @@
+/* replaced from bootstrap*/
+
 body{
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+
+a:focus {
+    outline: none;
+}
+
+/* END replaced from bootstrap*/
 
 header{
     height: 90px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     background: url("i/header.png");
     position: relative;
+    /*border-bottom-left-radius: 3px;*/
+    /*border-bottom-right-radius: 3px;*/
 }
 
 .logo {
@@ -18,11 +28,86 @@ header{
 .nav-list li{
     float: left;
     list-style: none;
-    margin: 0 10px;
+    margin: 0 6px;
+    text-align: center;
+    line-height: 16px;
 }
 
 .nav-list{
     position: absolute;
     right: 0;
-    top:
+    top: 50%;
+    height: 48px;
+    margin-top: -24px;
+}
+
+.nav-list a{
+    color: #343434;
+}
+
+.nav-list a:hover{
+    color: #343434;
+}
+
+.semibold{
+    font-weight: 600;
+}
+
+.nav-list .whatsup-link,.nav-list .whatsup-link:hover{
+    color: black;
+}
+
+li.whatsup{
+    position: relative;
+    top: 50%;
+    height: 32px;
+    margin-top: -20px;
+    text-align: left;
+}
+
+.nav-list .line-two{
+    font-size: 13px;
+}
+
+.nav-list .line-three{
+    font-size: 13px;
+    line-height: 14px;
+    display: block;
+}
+
+li.search{
+    position: relative;
+    top: 50%;
+    height: 30px;
+    margin-top: -15px;
+    margin-bottom: 0;
+}
+
+.form-search .search-query{
+    background: #f2f2f2; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f2f2f2 0%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f2f2f2 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f2f2f2 0%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f2f2f2 0%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f2f2f2 0%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+    height: 18px;
+    line-height: 18px;
+}
+
+.form-search input::-webkit-input-placeholder, .form-search input:-moz-placeholder, .form-search input:-ms-input-placeholder {
+    color:    #a5a5a5;
+}
+
+.nav-list .login{
+    position: relative;
+    top: 50%;
+    height: 16px;
+    margin-top: -8px;
+}
+
+.container.custom{
+    width: 960px;
 }
