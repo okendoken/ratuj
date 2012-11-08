@@ -95,6 +95,7 @@ li.search{
 
     height: 18px;
     line-height: 18px;
+    width: 200px;
 }
 
 .form-search input::-webkit-input-placeholder, .form-search input:-moz-placeholder, .form-search input:-ms-input-placeholder {
@@ -110,4 +111,132 @@ li.search{
 
 .container.custom{
     width: 960px;
+}
+
+article h1{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+article{
+    margin-top: 50px;
+}
+
+article .author{
+    float: right;
+    margin-top: 10px;
+    margin-right: 40px;
+}
+
+article .author, article .author a{
+    color: #4b4b4b;
+    font-size: 16px;
+}
+
+article .header:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+article .content{
+    margin-top: 20px;
+}
+
+article .content > div{
+    float: left;
+    width: 50%;
+}
+
+article .content .description{
+    font-size: 16px;
+    line-height: 22px;
+}
+
+article .content hr{
+    margin: 25px 0;
+    border-top: 1px solid #c0c0c0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.container .content{
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn.isnue{
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-shadow: none;
+
+    background: #d13727;
+    border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 -1px 2px #333333;
+}
+
+.btn.isnue:hover{
+    background: #d13727;
+    color: white;
+}
+
+.btn.isnue:focus{
+    outline: none;
+}
+
+article .actions{
+    float: right;
+}
+
+footer{
+    margin-top: 100px;
+    height: 104px;
+    box-shadow: 0 0px 2px #333333;
+    background: url("i/footer.png");
+    position: relative;
+
+    font-weight: 600;
+}
+
+footer ul{
+    margin: 0;
+}
+
+footer li{
+    list-style: none;
+    line-height: 18px;
+}
+
+footer li a{
+    color: white;
+}
+
+.container footer .content{
+    width: 498px;
+    position: relative;
+    top: 24px;
+}
+
+footer .content > ul{
+    float: left;
+    width: 30%;
+}
+
+footer .content > .copyright{
+    float: left;
+    width: 40%;
+}
+
+footer .copyright{
+    color: #59100b;
+    position: relative;
+    top: 10px;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: right;
 }
