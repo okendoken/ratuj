@@ -1,4 +1,7 @@
 class ProblemsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /problems
   # GET /problems.json
   def index
@@ -40,7 +43,7 @@ class ProblemsController < ApplicationController
   # POST /problems
   # POST /problems.json
   def create
-    @problem = Problem.new(params[:problem])
+    @problem = current_user.problems.new(params[:problem])
 
     respond_to do |format|
       if @problem.save
