@@ -1,4 +1,11 @@
 Ratuj::Application.routes.draw do
+  resources :problems
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  get "home/index"
+
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

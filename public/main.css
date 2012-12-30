@@ -199,7 +199,7 @@ article .actions{
 footer{
     margin-top: 100px;
     height: 104px;
-    box-shadow: 0 0px 2px #333333;
+    box-shadow: 0 0 2px #333333;
     background: url("i/footer.png");
     position: relative;
 
