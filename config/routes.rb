@@ -1,6 +1,8 @@
 Ratuj::Application.routes.draw do
   resources :problems
 
+  resources :user
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get "home/index"
