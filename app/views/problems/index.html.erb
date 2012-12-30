@@ -11,13 +11,14 @@
   </tr>
 
 <% @problems.each do |problem| %>
+      <% can_manage = can?(:manage, problem) %>
   <tr>
     <td><%= problem.name %></td>
     <td><%= problem.description %></td>
     <td><%= link_to problem.user.email, user_path(problem.user) %></td>
     <td><%= link_to 'Show', problem %></td>
-    <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
-    <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_problem_path(problem) if can_manage%></td>
+    <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } if can_manage%></td>
   </tr>
 <% end %>
 </table>

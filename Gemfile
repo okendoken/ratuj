@@ -29,6 +29,8 @@ gem 'oauth2'
 gem 'omniauth-vkontakte'
 gem 'omniauth-facebook'
 
+gem 'cancan'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

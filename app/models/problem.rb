@@ -3,4 +3,12 @@ class Problem < ActiveRecord::Base
   attr_accessible :description, :name
 
   validates :user_id, :presence => true
+
+  def self.search(query)
+    if query and !query.empty?
+      where('name like ? or description like ?', "%#{query}%", "%#{query}%")
+    else
+      all
+    end
+  end
 end

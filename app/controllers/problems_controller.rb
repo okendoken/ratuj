@@ -1,11 +1,11 @@
 class ProblemsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   # GET /problems
   # GET /problems.json
   def index
-    @problems = Problem.all
+    @problems = Problem.search(params[:q])
 
     respond_to do |format|
       format.html # index.html.erb
