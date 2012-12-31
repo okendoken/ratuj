@@ -3,6 +3,8 @@ class Problem < ActiveRecord::Base
   attr_accessible :description, :name
 
   validates :user_id, :presence => true
+  validates :name, :presence => true
+  validates :description, :presence => true
 
   has_many :comments, :dependent => :destroy
 

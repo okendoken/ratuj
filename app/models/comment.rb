@@ -5,4 +5,5 @@ class Comment < ActiveRecord::Base
 
   validates :user_id, :presence => true
   validates :problem_id, :presence => true
+  validates :body, :presence => true
 end
