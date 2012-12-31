@@ -26,4 +26,12 @@ class User < ActiveRecord::Base
       user
     end
   end
+
+  def self.search(query)
+    if query and !query.empty?
+      where('name email ?', "%#{query}%")
+    else
+      all
+    end
+  end
 end
