@@ -4,7 +4,7 @@ class Problem < ActiveRecord::Base
 
   validates :user_id, :presence => true
 
-  has_many :comments
+  has_many :comments, :dependent => :destroy
 
   def self.search(query)
     if query and !query.empty?

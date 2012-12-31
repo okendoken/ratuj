@@ -6,4 +6,11 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to problem_path(@problem)
   end
+
+  def destroy
+    @problem = Problem.find(params[:problem_id])
+    @comment = @problem.comments.find(params[:id])
+    @comment.destroy
+    redirect_to problem_path(@problem)
+  end
 end

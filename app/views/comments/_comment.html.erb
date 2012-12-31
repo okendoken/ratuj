@@ -1,0 +1,18 @@
+<p>
+  <b>Commenter:</b>
+  <%= comment.user.email %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= comment.body %>
+</p>
+
+
+<% if can? :manage, comment %>
+    <p>
+      <%= link_to 'Destroy Comment', [comment.problem, comment],
+                  :confirm => 'Are you sure?',
+                  :method => :delete %>
+    </p>
+<% end %>
