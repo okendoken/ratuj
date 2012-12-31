@@ -11,10 +11,33 @@
 </p>
 
 <p>
-  <b>User:</b>
+  <b>By:</b>
   <%= link_to @problem.user.email, @problem.user %>
 </p>
 
+<h2>Comments</h2>
+<% @problem.comments.each do |comment| %>
+    <p>
+      <b>Commenter:</b>
+      <%= comment.user.email %>
+    </p>
+
+    <p>
+      <b>Comment:</b>
+      <%= comment.body %>
+    </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@problem, @problem.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
 
 <%= link_to 'Edit', edit_problem_path(@problem) %> |
 <%= link_to 'Back', problems_path %>

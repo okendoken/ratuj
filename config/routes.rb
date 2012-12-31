@@ -1,5 +1,7 @@
 Ratuj::Application.routes.draw do
-  resources :problems
+  resources :problems do
+    resources :comments
+  end
 
   resources :user
 

@@ -4,6 +4,8 @@ class Problem < ActiveRecord::Base
 
   validates :user_id, :presence => true
 
+  has_many :comments
+
   def self.search(query)
     if query and !query.empty?
       where('name like ? or description like ?', "%#{query}%", "%#{query}%")
