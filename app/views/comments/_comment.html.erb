@@ -1,18 +1,16 @@
-<p>
-  <b>Commenter:</b>
-  <%= comment.user.email %>
-</p>
-
-<p>
-  <b>Comment:</b>
-  <%= comment.body %>
-</p>
-
-
-<% if can? :manage, comment %>
-    <p>
-      <%= link_to 'Destroy Comment', [comment.problem, comment],
-                  :confirm => 'Are you sure?',
-                  :method => :delete %>
-    </p>
-<% end %>
+<div class="comment">
+  <div class="by">
+    <%= link_to comment.user.email, comment.user %>
+  </div>
+  <div class="body">
+    <%= simple_format comment.body %>
+  </div>
+  <div class="actions">
+    <% if can? :manage, comment %>
+        <%= link_to 'Destroy', [comment.problem, comment],
+                    :confirm => 'Are you sure?',
+                    :method => :delete %>
+    <% end %>
+  </div>
+  <hr/>
+</div>

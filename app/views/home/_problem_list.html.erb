@@ -1,0 +1,22 @@
+<div class="problem-container">
+  <% if @problems %>
+      <% @problems.each do |problem| %>
+          <section class="problem">
+            <h4><%= link_to problem.name, problem %> by <%= link_to problem.user.email, user_path(problem.user) %></h4>
+            <div>
+              <%= truncate problem.description, :length => 350 %>
+            </div>
+            <% display_actions ||= display_actions %>
+            <% if display_actions  %>
+                <div class="actions">
+                  <% can_manage = can?(:manage, problem) %>
+                  <%= link_to 'Edit', edit_problem_path(problem) if can_manage%>
+                  <%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } if can_manage%>
+                </div>
+            <% end %>
+          </section>
+      <% end %>
+  <% else %>
+      No problems
+  <% end %>
+</div>

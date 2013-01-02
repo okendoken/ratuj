@@ -1,25 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @problem.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @problem.description %>
-</p>
-
-<p>
-  <b>By:</b>
-  <%= link_to @problem.user.email, @problem.user %>
-</p>
-
-<h2>Comments</h2>
-<%= render @problem.comments %>
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
-
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
+<article class="problem-page">
+  <h1><%= @problem.name %></h1>
+  <div class="by">
+    By
+    <%= link_to @problem.user.email, @problem.user %>
+  </div>
+  <div id="notice"><%= notice %></div>
+  <div class="description">
+    <%= simple_format @problem.description %>
+  </div>
+  <div class="comments">
+    <h4><%= @problem.comments.count %> comments</h4>
+    <div class="comment-list">
+      <%= render @problem.comments %>
+    </div>
+    <%= render "comments/form" %>
+  </div>
+  <% if can? :manage, @problem %>
+      <%= link_to 'Edit', edit_problem_path(@problem)%>
+      |
+  <% end %>
+  <%= link_to 'Back', problems_path %>
+</article>

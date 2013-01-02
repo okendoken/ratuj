@@ -9,5 +9,83 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+header .navbar{
+    margin-bottom: 0;
+}
+
+body>.container{
+    box-shadow: 0 10px 15px #b7b7b7;
+}
+
+.content{
+    padding: 40px;
+}
+
+footer{
+    height: 100px;
+}
+
+.problem{
+    padding: 10px 20px;
+    background: #f9f9f9;
+    margin-top: 10px;
+    box-shadow: 0 0 2px #d9d9d9;
+}
+
+.problem:hover{
+    box-shadow: 0 0 5px #d9d9d9;
+}
+
+.problem h4{
+    margin-top: 0;
+}
+
+.problem:first-child{
+    margin-top: 0;
+}
+
+.problem-container{
+    margin-top: 20px;
+}
+
+.problem .actions{
+    margin-top: 10px;
+}
+
+.problem-page h1{
+    margin: 0;
+}
+
+.problem-page>.by{
+    margin-left: 5px;
+}
+
+.problem-page .description{
+    padding: 20px 10px;
+    font-size: 16px;
+}
+
+.comments form textarea{
+    width: 500px;
+    height: 60px;
+}
+
+.comment .body{
+    margin-left: 20px;
+}
+
+.comment:last-child hr{
+    display: none;
+}
+
+.comments form{
+    margin-top: 20px;
+}
+
+.comment .actions{
+    font-size: 11px;
+    line-height: 1.3em;
+    margin: 0;
+}
