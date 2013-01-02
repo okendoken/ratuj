@@ -1,13 +1,19 @@
 Ratuj::Application.routes.draw do
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   devise_for :admins
+
+  scope 'admin' do
+    resources :users, :as => "admin_users"
+    root :to => "admin_home#index"
+  end
+
+  resources :users, :only => :show
 
   resources :problems do
     resources :comments
   end
-
-  resources :users
-
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get "home/index"
 

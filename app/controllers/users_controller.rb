@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < AdminHomeController
 
   before_filter :authenticate_admin!, :except => [:show]
 
@@ -6,7 +6,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {
+        unless admin_signed_in?
+           render :layout => 'application'
+        end
+      }
       format.json { render json: @user }
     end
   end
@@ -50,8 +54,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+    if params[:user][:password].empty?
+      params[:user].delete :password
+    end
+
     respond_to do |format|
-      if @user.update_attributes(params[:@user])
+      if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -66,7 +74,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to admin_users_url }
       format.json { head :no_content }
     end
   end

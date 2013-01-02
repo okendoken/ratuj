@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
   def self.search(query)
     if query and !query.empty?
-      where('name email ?', "%#{query}%")
+      where('email like ?', "%#{query}%")
     else
       all
     end
