@@ -2,7 +2,7 @@
   <h1><%= @problem.name %></h1>
   <div class="by">
     By
-    <%= link_to @problem.user.email, @problem.user %>
+    <%= link_to @problem.user.nickname, @problem.user %>
   </div>
   <div id="notice"><%= notice %></div>
   <div class="description">

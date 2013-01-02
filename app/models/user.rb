@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   has_many :problems
 
+  validates :nickname, :presence => true
+
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
     if user = User.where(:email => data.email).first
@@ -29,7 +31,7 @@ class User < ActiveRecord::Base
 
   def self.search(query)
     if query and !query.empty?
-      where('email like ?', "%#{query}%")
+      where('email like ? or nickname like ?', "%#{query}%", "%#{query}%")
     else
       all
     end

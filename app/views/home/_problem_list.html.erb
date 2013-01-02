@@ -2,7 +2,7 @@
   <% if @problems %>
       <% @problems.each do |problem| %>
           <section class="problem">
-            <h4><%= link_to problem.name, problem %> by <%= link_to problem.user.email, user_path(problem.user) %></h4>
+            <h4><%= link_to problem.name, problem %> by <%= link_to problem.user.nickname, user_path(problem.user) %></h4>
             <div>
               <%= truncate problem.description, :length => 350 %>
             </div>
