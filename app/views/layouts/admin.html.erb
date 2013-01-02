@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ratuj-Admin</title>
+  <title>Ratuj</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
+  <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
+  <%= stylesheet_link_tag    params[:controller] %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "bootstrap" %>
+  <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<a href="/admin/">Admin Home</a>
-<% if admin_signed_in? %>
-    <%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Sign In', new_admin_session_path %>
-<% end %>
-<%= render('users/search')%>
-<%= yield %>
+<div class="container">
+  <header>
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/admin">Ratuj Admin</a>
+          <div class="nav-collapse collapse navbar-responsive-collapse">
+            <ul class="nav">
+              <li><a href="/admin">Home</a></li>
+              <% if admin_signed_in? %>
+                  <li><%= link_to "Users", admin_users_path %></li>
+                  <li><%= link_to 'New User', new_admin_user_path %></li>
+              <% end %>
+            </ul>
+            <%= render('users/search')%>
+            <ul class="nav pull-right">
+              <% if admin_signed_in? %>
+                  <li>
+                    <%= link_to current_admin.email, '/admin' %>
+                  </li>
+              <% end %>
+              <li>
+                <% if admin_signed_in? %>
+                    <%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %>
+                <% else %>
+                    <%= link_to 'Sign In', new_admin_session_path %>
+                <% end %>
+              </li>
+            </ul>
+          </div><!-- /.nav-collapse -->
+        </div>
+      </div><!-- /navbar-inner -->
+    </div>
+  </header>
+  <div class="content">
+    <%= yield %>
+  </div>
+  <footer>
 
+  </footer>
+</div>
 </body>
 </html>
