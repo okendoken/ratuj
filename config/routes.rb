@@ -1,12 +1,15 @@
 Ratuj::Application.routes.draw do
 
+  resources :payments, :only => [:index, :new, :create]
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   devise_for :admins
 
   scope 'admin' do
-    resources :users, :as => "admin_users"
     root :to => "admin_home#index"
+    resources :users, :as => "admin_users"
+    get 'report', :to => "admin_home#report"
   end
 
   resources :users, :only => :show

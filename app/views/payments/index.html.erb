@@ -1,0 +1,22 @@
+<h1>Payments made by you</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th>Amount</th>
+    <th>Card</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.amount %></td>
+        <td><%= payment.card %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Payment', new_payment_path %>

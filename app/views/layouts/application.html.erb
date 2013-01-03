@@ -34,6 +34,7 @@
             <%= render('problems/search')%>
             <ul class="nav pull-right">
               <% if user_signed_in? %>
+                  <li><%= link_to "My Payments", payments_path %></li>
                   <li>
                     <%= link_to current_user.nickname, current_user %>
                   </li>

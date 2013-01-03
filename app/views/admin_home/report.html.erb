@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover table-bordered">
+  <caption>Payments report</caption>
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Amount</th>
+    <th>Card</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @payments.each do |payment| %>
+      <tr>
+        <td><%= link_to payment.user.nickname, payment.user %></td>
+        <td><%= payment.amount %></td>
+        <td><%= payment.card %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<div class="pull-right clearfix">
+  2012 Ratuj.by
+</div>
