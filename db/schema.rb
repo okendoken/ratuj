@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102233425) do
+ActiveRecord::Schema.define(:version => 20121231072143) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -58,16 +58,6 @@ ActiveRecord::Schema.define(:version => 20130102233425) do
 
   add_index "comments", ["problem_id"], :name => "index_comments_on_problem_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
-
-  create_table "payments", :force => true do |t|
-    t.integer  "amount"
-    t.integer  "card"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "payments", ["user_id"], :name => "index_payments_on_user_id"
 
   create_table "problems", :force => true do |t|
     t.string   "name"

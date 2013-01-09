@@ -1,14 +1,12 @@
 <h1>Listing users</h1>
 
-<table class="table table-striped table-hover table-bordered">
-  <thead>
+<table>
   <tr>
     <th>Email</th>
     <th>Problems count</th>
     <th></th>
   </tr>
-  </thead>
-  <tbody>
+
   <% @users.each do |user| %>
       <tr>
         <td><%= link_to user.nickname, admin_user_path(user) %></td>
@@ -17,7 +15,6 @@
         <td><%= link_to 'Destroy', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }%></td>
       </tr>
   <% end %>
-  </tbody>
 </table>
 
 <br />

@@ -13,8 +13,6 @@ class User < ActiveRecord::Base
 
   has_many :problems
 
-  has_many :payments
-
   validates :nickname, :presence => true
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
