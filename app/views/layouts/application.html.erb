@@ -11,10 +11,10 @@
   <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="container">
-  <header>
-    <div class="navbar">
+<body class="ratuj">
+<header>
+  <div class="container">
+    <nav class="navbar">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -22,16 +22,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Ratuj</a>
+          <a class="brand" href="/">ratuj.by</a>
           <div class="nav-collapse collapse navbar-responsive-collapse">
             <ul class="nav">
-              <li><a href="/">Home</a></li>
-              <% if user_signed_in? %>
-                  <li><%= link_to "Problems", problems_path %></li>
-                  <li><%= link_to 'New Problem', new_problem_path %></li>
-              <% end %>
+              <li><%= link_to "Праблемы", problems_path %></li>
+              <li><%= link_to 'Стварыць', new_problem_path %></li>
             </ul>
-            <%= render('problems/search')%>
             <ul class="nav pull-right">
               <% if user_signed_in? %>
                   <li>
@@ -40,18 +36,21 @@
               <% end %>
               <li>
                 <% if user_signed_in? %>
-                    <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+                    <%= link_to 'Выйсьці', destroy_user_session_path, :method => :delete %>
                 <% else %>
-                    <%= link_to 'Sign In', new_user_session_path %>
+                    <%= link_to 'Увайсьці', new_user_session_path %>
                 <% end %>
               </li>
             </ul>
-          </div><!-- /.nav-collapse -->
+            <%= render('problems/search')%>
+          </div>
         </div>
-      </div><!-- /navbar-inner -->
-    </div>
-  </header>
-  <div class="content">
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <div class="content <%= params[:controller] %>">
     <%= yield %>
   </div>
   <footer>

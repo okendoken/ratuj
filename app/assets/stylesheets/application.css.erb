@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,cyrillic);
+
+body{
+
+}
+
+header{
+    font-family: 'Open Sans', arial, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    background: #333;
+}
+
+    header > .container{
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        height: 45px;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 50%;
+        height: 40px;
+        width: 100%;
+        margin-top: -20px;
+        margin-bottom: 0;
+    }
+
+        header .navbar .nav > li > a{
+            text-shadow: none;
+            color: #d7d7d7;
+        }
+
+        header .navbar .nav > li > a:hover{
+            color: white;
+        }
+
+    header .navbar-inner{
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+
+        header .navbar-inner .brand{
+            text-shadow: none;
+            font-weight: 700;
+            color: #ebebeb;
+            font-size: 24px;
+            padding: 10px 0 0;
+        }
+
+            header .navbar-inner .brand:hover{
+                color: #ffffff;
+            }
+
+    header .navbar .nav{
+        margin-left: 40px;
+    }
+
+    header .navbar-search{
+        margin-top: 7px;
+    }
+
+        header .navbar-search .search-query{
+            border-radius: 0;
+            font-size: 13px;
+            line-height: 1.3em;
+            height: 1.3em;
+            background: #525252;
+            border: #000000;
+            color: #D7D7D7;
+        }
+
+        header .navbar-search .search-query:focus{
+            box-shadow: none;
+            background: #5e5e5e;
+        }
+
+            header .navbar-search .search-query:focus::-webkit-input-placeholder{
+                color: #D7D7D7;
+            }
+
+
+.content .bar{
+    background: url(http://www.smartshoot.com/wp-content/uploads/bar1.png);
+    height: 37px;
+}
+
+@media (min-width: 1200px) {
+    .ratuj .container{
+        width: 940px;
+    }
+}
