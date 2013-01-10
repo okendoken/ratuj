@@ -1,4 +1,35 @@
 <div class="description">
-  <h2>Галоўная Беларуская платформа</h2>
-  <%= render 'problem_list' %>
+  <div class="row">
+    <div class="span5">
+      <h1>Галоўная Беларуская платформа па вырашэньню <strong>пытаньняў</strong></h1>
+    </div>
+    <div class="span3 offset1">
+      <div class="add-issue-block">
+        <%= link_to 'Дадаць пытаньне', new_problem_path, :class => 'add-issue-link' %>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="latest clearfix">
+  <% (2..9).each do |i|%>
+      <div class="issue">
+        <a href="#">
+          <img src="/test/<%= i %>.jpg">
+        </a>
+        <div class="description-overflow">
+          <div class="wrap">
+            <div class="text">
+              Пабудаваць беларускамоўны садок у Лепеле
+            </div>
+            <div class="supporters">
+              <hr/>
+              <%= 1 + rand(5000) %> падтрымалі
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+<%=
+    #render 'problem_list'
+%>

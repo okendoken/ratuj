@@ -3,5 +3,79 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .description{
+  margin-top: 40px;
+  h1{
+    margin: 0;
+    font: {
+      family: 'Open Sans', arial;
+      weight: 400;
+      size: 31.5px;
+    }
 
+  }
+}
+
+.add-issue-block{
+  margin-top: 45px;
+
+  .add-issue-link{
+    background: #d13727;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 18px 36px;
+    text-decoration: none;
+    &:hover{
+      background: #da3929;
+    }
+  }
+}
+
+.latest{
+  margin-top: 40px;
+}
+
+.issue{
+  float: left;
+  width: 235px;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+
+  .description-overflow{
+    height: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    background: #da3929;
+    color: white;
+
+    -webkit-transition: height linear 0.2s;
+    -moz-transition: height linear 0.2s;
+    -o-transition: height linear 0.2s;
+    transition: height linear 0.2s;
+
+    .wrap{
+      padding: 10px;
+    }
+
+    .text{
+      font-size: 16px;
+    }
+
+    hr{
+      margin: 5px 0;
+    }
+
+    .supporters{
+      font-size: 12px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &:hover{
+    .description-overflow{
+      height: 100%;
+    }
+  }
 }
