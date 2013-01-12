@@ -10,7 +10,7 @@
     </div>
   </div>
 </div>
-<div class="latest clearfix">
+<div class="popular clearfix">
   <% (2..9).each do |i|%>
       <div class="issue">
         <a href="#">
@@ -30,6 +30,38 @@
       </div>
   <% end %>
 </div>
+<section class="latest">
+  <h2>
+    Апошнія
+  </h2>
+  <hr/>
+  <div class="issues clearfix">
+    <% (2..7).each do |i|%>
+        <section class="issue">
+          <div class="picture">
+            <a href="#">
+              <img src="/test/<%= i %>.jpg">
+            </a>
+          </div>
+          <hr/>
+          <div class="description">
+            <h3>
+              <a href="#">Нехапае веганскай крамы вельмі патрэбна</a>
+            </h3>
+            <hr/>
+            <div class="supporters">
+              <span>
+                <%= 1 + rand(5000) %> падтрымалі
+              </span>
+              <span class="creator">
+                <a href="#">Алесь Канюшын</a>
+              </span>
+            </div>
+          </div>
+        </section>
+    <% end %>
+  </div>
+</section>
 <%=
     #render 'problem_list'
 %>
