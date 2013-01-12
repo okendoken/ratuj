@@ -12,6 +12,10 @@
  */
 
 @import url(<%= asset_path 'google-open-sans.css' %>);
+@import "gradient";
+
+$link_color: #a9a9a9;
+$brand_color: #ebebeb;
 
 body{
     font-family: 'Open Sans', arial, sans-serif;
@@ -26,7 +30,11 @@ strong{
 }
 
 a{
-    color: #a9a9a9;
+    color: $link_color;
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
 }
 
 header{
@@ -55,10 +63,10 @@ header{
         header .navbar .nav > li > a{
             text-shadow: none;
             color: #d7d7d7;
-        }
 
-        header .navbar .nav > li > a:hover{
-            color: white;
+            &:hover{
+                color: white;
+            }
         }
 
     header .navbar-inner{
@@ -70,21 +78,21 @@ header{
         header .navbar-inner .brand{
             text-shadow: none;
             font-weight: 700;
-            color: #ebebeb;
+            color: $brand_color;
             font-size: 24px;
             padding: 10px 0 0;
-        }
 
-            header .navbar-inner .brand:hover{
-                color: #ffffff;
+            &:hover{
+                color: lighten($brand_color, 40%);
             }
+        }
 
     header .navbar .nav{
         margin-left: 40px;
     }
 
     header .navbar-search{
-        margin-top: 7px;
+        margin-top: 8px;
     }
 
         header .navbar-search .search-query{
@@ -107,9 +115,39 @@ header{
             }
 
 footer{
-    /*margin-top: 100px;*/
-    /*background: #3d3d3d;*/
-    /*height: 500px;*/
+    margin-top: 100px;
+    height: 200px;
+    @include gradient(#555, #333);
+
+    .container{
+        padding-top: 40px;
+    }
+
+    .brand{
+        font-weight: 700;
+        color: $brand_color;
+        font-size: 30px;
+        text-decoration: none;
+
+        &:hover{
+            color: lighten($brand_color, 40%);
+        }
+    }
+
+    .slogan{
+        font-size: 16px;
+        margin-top: 10px;
+        color: darken($brand_color, 15%);
+    }
+
+    li{
+        list-style: none;
+        margin-top: 5px;
+
+        a:hover{
+            color: lighten($link_color, 15%);
+        }
+    }
 }
 
 @media (min-width: 1200px) {
